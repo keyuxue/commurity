@@ -7,13 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/first")
+@RequestMapping("/controller")
 public class FirstController {
-    @GetMapping("/index")
+    @GetMapping("/first")
     public String first(@RequestParam(name = "name") String name, Model model) {
         // Ctrl  m   p 显示参数
-        model.addAttribute("name",name);
+        model.addAttribute("name", name);
         return "first";
 
+    }
+
+    @GetMapping("/index")
+    public String index() {
+        return "index2";
     }
 }
